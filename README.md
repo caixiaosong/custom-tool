@@ -25,5 +25,23 @@ yarn run test
 yarn run lint
 ```
 
+###  build electron app
+```
+yarn electron:build
+```
+
+### install electron-build dependency
+```
+yarn postinstall
+```
+
+### uninstall electron-build dependency
+```
+yarn postuninstall
+```
+
+
+
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -5,7 +5,8 @@
   ],
   "linterOptions": {
     "exclude": [
-      "node_modules/**"
+      "node_modules/**",
+      "eslintrc.js"
     ]
   },
   "rules": {
@@ -19,10 +20,11 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "quotemark": [
-      true,
+      false,
       "single"
     ],
     "trailing-comma": false,
-    "semicolon": false
+    "semicolon": false,
+    "arrow-parens": true
   }
 }

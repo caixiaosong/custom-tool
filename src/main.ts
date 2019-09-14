@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import store from './store';
+import store from './stores/store';
 import iview from 'iview';
 import 'iview/dist/styles/iview.css';
 
@@ -12,8 +12,8 @@ new Vue({
   router,
   store,
   render: (h) => h(App),
-  mounted() {
-    // Prevent blank screen in Electron builds
-    this.$router.push('/')
-  }
+  // mounted() {
+  //   // Prevent blank screen in Electron builds
+  //   this.$router.push('/')
+  // }
 }).$mount('#app');

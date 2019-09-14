@@ -25,6 +25,7 @@
     ],
     "trailing-comma": false,
     "semicolon": false,
-    "arrow-parens": true
+    "arrow-parens": true,
+    "variable-name": false
   }
 }

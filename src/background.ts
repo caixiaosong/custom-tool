@@ -18,25 +18,27 @@ function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
     webPreferences: {
-      nodeIntegration: true
-    }
+      nodeIntegration: true,
+      devTools: isDevelopment,
+    },
   });
-  win.maximize();
 
+  win.once('closed', () => {
+    win = null
+  })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string)
-    if (!process.env.IS_TEST) { win.webContents.openDevTools() }
+    // if (!process.env.IS_TEST) {
+    //   win.webContents.openDevTools()
+    // }
   } else {
     createProtocol('app')
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
 
-  win.on('closed', () => {
-    win = null
-  })
 }
 
 // Quit when all windows are closed.
@@ -72,7 +74,6 @@ app.on('ready', async () => {
     // } catch (e) {
     //   console.error('Vue Devtools failed to install:', e.toString())
     // }
-
   }
   createWindow()
 })

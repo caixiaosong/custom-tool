@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
+src-custom-test-out
 /dist
+
 
 # local env files
 .env.local

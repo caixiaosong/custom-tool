@@ -2,6 +2,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "node",
+            "request": "launch",
+            "name": "Custom Test",
+            "cwd": "${workspaceRoot}",
+            "args": [
+                "${workspaceFolder}/src-custom-test/CT_MainPl.ts",
+            ],
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register"
+            ],
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "sourceMaps": true,
+            // "preLaunchTask": "tsc: build - tsconfig.json",
+            // "outFiles": [
+            //     "${workspaceFolder}/src-custom-test-out/**/*.js"
+            // ]
+        },
+        {
             "name": "Electron: Main",
             "type": "node",
             "request": "launch",

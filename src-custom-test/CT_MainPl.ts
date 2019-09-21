@@ -14,7 +14,6 @@ class CT_MainPl {
         //被代理类
         class Count {
             public count: number = 0;
-            public proxy: any = undefined;
         }
 
         //代理处理器，只代理了get,set

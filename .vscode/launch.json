@@ -5,7 +5,7 @@
             "type": "node",
             "request": "launch",
             "name": "Custom Test",
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceFolder}",
             "args": [
                 "${workspaceFolder}/src-custom-test/CT_MainPl.ts",
             ],

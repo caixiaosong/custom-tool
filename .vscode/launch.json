@@ -12,11 +12,14 @@
             "runtimeArgs": [
                 "--nolazy",
                 "-r",
-                "ts-node/register"
+                "ts-node/register",
             ],
             "protocol": "inspector",
             "console": "integratedTerminal",
             "sourceMaps": true,
+            "env": {
+                "TS_NODE_PROJECT": "tsconfig.customtest.json"
+            }
             // "preLaunchTask": "tsc: build - tsconfig.json",
             // "outFiles": [
             //     "${workspaceFolder}/src-custom-test-out/**/*.js"

@@ -1,3 +1,4 @@
+import { CT_Decorator } from './CT_Decorator';
 class CT_MainPl {
     public run() {
         // this.testNumber();
@@ -5,8 +6,76 @@ class CT_MainPl {
         // this.testNickFuncName();
         // this.testFuncParm();
         // this.testArrLike();
-        this.testProxy();
+        // this.testProxy();
+        // this.testYeildStar();
+        // this.testYieldFunc();
+        // this.testThis();
+        new CT_Decorator().run();
+    }
 
+    private testThis(): void {
+        console.log(this);
+        // let testFunc = function () {
+        //     var obj: Object = this;
+        // }
+        let arrFunc = () => {
+            console.log(this);
+        }
+
+        // testFunc();
+        arrFunc();
+
+    }
+
+    private testYieldFunc(): void {
+        let num: number = 0;
+        let generator = function* () {
+            yield function () {
+                ++num;
+                return num;
+            }();//定义后直接调用
+            yield function () {
+                ++num;
+                return num;
+            }();//定义后直接调用
+            return ++num;
+        }
+
+        var gen = generator();
+        console.log(gen.next());
+        console.log(gen.next());
+        console.log(gen.next());
+    }
+
+    /**
+     * for ...of 会自动调用生成器。
+     * for...in 不会自动调用生成器。
+     * 
+     * yield*是生成器中调用另外一个生成器。每次nextd的时候自动调用另外一个生成器的next
+     * yield*后面跟的是一个可遍历的结构，它会调用该结构的遍历器接口。
+     * 
+     * yield 以下三个都会调用yield
+     * next(value:obj)
+     * throw(value:obj)，内部try catch 后可以继续，没有try则会进入{value:undefined,done:true}
+     * return(value:obj),如果有try final 则会直接进入final状态，如果final还有yield则会在next掉所有yield的时候在调用传入的value
+     */
+    private testYeildStar(): void {
+        let generator = function* () {
+            yield { msg: 'msg' }
+            yield 1;
+            yield* [2, 3, 4];
+            yield 5;
+        };
+
+        var iterator = generator();
+
+        console.log(iterator.next());// { value: { msg: 'msg' }, done: false }
+        console.log(iterator.next());// { value: 1, done: false }
+        console.log(iterator.next());// { value: 2, done: false }
+        console.log(iterator.next());// { value: 3, done: false }
+        console.log(iterator.next());// { value: 4, done: false }
+        console.log(iterator.next());// { value: 5, done: false }
+        console.log(iterator.next());// { value:  undefined, done: true }
     }
 
 

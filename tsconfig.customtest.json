@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext", //当使用vue项目的时候开启这个
+    "module": "commonjs", //当使用test的时候开启。
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,

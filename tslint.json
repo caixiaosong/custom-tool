@@ -27,6 +27,8 @@
     "trailing-comma": false,
     "semicolon": false,
     "arrow-parens": true,
-    "variable-name": false
+    "variable-name": false,
+    "space-before-function-paren": false,
+    "only-arrow-functions": false
   }
 }

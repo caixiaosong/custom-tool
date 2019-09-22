@@ -5,7 +5,12 @@ import {
   createProtocol,
   installVueDevtools
 } from 'vue-cli-plugin-electron-builder/lib'
+import WinShowTest from './test/WinShowTest'
+import { GlobalVar } from './global/GlobalVar'
 const isDevelopment = process.env.NODE_ENV !== 'production'
+
+// 设置是否是开发环境
+GlobalVar.instance.setValue("isDev", isDevelopment);
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -27,18 +32,20 @@ function createWindow() {
     win = null
   })
 
+  // win.on("show", () => {
+  //   new WinShowTest().run();
+  // });
+
+
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string)
-    // if (!process.env.IS_TEST) {
-    //   win.webContents.openDevTools()
-    // }
   } else {
     createProtocol('app')
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
-
+  new WinShowTest().run();
 }
 
 // Quit when all windows are closed.

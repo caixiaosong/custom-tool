@@ -1,7 +1,5 @@
 import { DecoratorTest0 } from './DecoratorTest0';
 import { GlobalVar } from '../global/GlobalVar';
-import { DialogHelper } from '../helper/DialogHelper';
-import { dialog } from 'electron';
 export default class WinReadyTest {
 
     /**
@@ -24,15 +22,6 @@ export default class WinReadyTest {
 
     private runTest(): void {
         new DecoratorTest0().run();
-        // DialogHelper.instance.
-        DialogHelper.showConfirm('yes or not ',
-            () => {
-                dialog.showMessageBox({ message: 'yes' });
-            },
-            () => {
-                dialog.showMessageBox({ message: 'no' });
-            }, false
-        );
 
     }
 }

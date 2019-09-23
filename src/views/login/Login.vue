@@ -25,8 +25,11 @@ export default {
   methods: {
     ...mapActions(["handleLogin", "getUserInfo"]),
     handleSubmit({ userName, password }) {
-      this.$Message.info('This is a info tip');
-
+      this.$Modal.info({
+        title: "iview对话框",
+        content: "对话框内容"
+      });
+      // this.$Message.info('This is a info tip');
       // this.handleLogin({ userName, password }).then(res0 => {
       //   this.getUserInfo().then(res1 => {
       //     this.$router.push({

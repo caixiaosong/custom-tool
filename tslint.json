@@ -7,7 +7,7 @@
     "exclude": [
       "node_modules/**",
       "eslintrc.js",
-      "src-custom-test/**"
+      "src/test/**"
     ]
   },
   "rules": {

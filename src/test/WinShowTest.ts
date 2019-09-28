@@ -1,5 +1,6 @@
 import { DecoratorTest0 } from './DecoratorTest0';
 import { GlobalVar } from '../global/GlobalVar';
+import GeneratorTest from './GeneratorTest';
 export default class WinReadyTest {
 
     /**
@@ -20,8 +21,9 @@ export default class WinReadyTest {
         this.runTest();
     }
 
+    // 为了断点测试而存在
     private runTest(): void {
         new DecoratorTest0().run();
-
+        new GeneratorTest().run();
     }
 }

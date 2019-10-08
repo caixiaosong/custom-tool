@@ -32,9 +32,11 @@ function createWindow() {
     win = null
   })
 
-  // win.on("show", () => {
-  //   new WinShowTest().run();
-  // });
+  win.on("show", () => {
+    if (win != null) {
+      win.webContents.openDevTools();
+    }
+  });
 
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {

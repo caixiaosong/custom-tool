@@ -6,7 +6,8 @@
       <router-link to="/login">Login</router-link>
     </div>
     <router-view />
-  </div>
+    <Global /><!--注册一个全局监听的功能组件-->
+    </div>
 </template>
 
 <style>
@@ -30,3 +31,13 @@
   color: #42b983;
 }
 </style>
+
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import Global from "@/views/global/Global.vue";
+export default {
+    components: {
+    Global
+  }
+};
+</script>

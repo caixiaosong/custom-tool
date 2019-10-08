@@ -17,26 +17,26 @@
 
 <script>
 import LoginForm from "@/components/login-form";
+// import LoginForm from "_c/login-form";
 import { mapActions } from "vuex";
+import GlobalEventEmitter from "@/global/GlobalEventEmitter";
+import GlobalEvent from "@/global/GlobalEvent";
 export default {
   components: {
     LoginForm
   },
   methods: {
-    ...mapActions(["handleLogin", "getUserInfo"]),
+    //将登录模块的方法映射到当前对象上
+    ...mapActions("login", ["handleLogin", "getUserInfo"]),
+
     handleSubmit({ userName, password }) {
-      this.$Modal.info({
-        title: "iview对话框",
-        content: "对话框内容"
+      this.handleLogin({ userName, password }).then(res0 => {
+        // this.getUserInfo().then(res1 => {
+        //   this.$router.push({
+        //     name: this.$config.login
+        //   });
+        // });
       });
-      // this.$Message.info('This is a info tip');
-      // this.handleLogin({ userName, password }).then(res0 => {
-      //   this.getUserInfo().then(res1 => {
-      //     this.$router.push({
-      //       name: this.$config.about
-      //     });
-      //   });
-      // });
     }
   }
 };

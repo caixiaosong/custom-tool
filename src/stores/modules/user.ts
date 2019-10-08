@@ -1,5 +1,7 @@
 
 export default {
+    namespaced: true,
+
     // 导入子模块
     modules: {
 

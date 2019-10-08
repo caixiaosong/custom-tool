@@ -3,6 +3,7 @@
  * store模版，为了方便创建而存在，每次拷贝模版
  */
 export default {
+    namespaced: true,
     // 导入子模块
     modules: {
 

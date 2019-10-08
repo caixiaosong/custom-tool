@@ -17,6 +17,9 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "_c/*": [
+        "src/components/*"
       ]
     },
     "lib": [
@@ -30,9 +33,9 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx",
-    "src-custom-test/**/*.ts"
+    "src-custom-test/**/*.ts",
+    "src/stores/modules/login.js",
+    "src/stores/store.js"
   ],
   "exclude": [
     "node_modules"

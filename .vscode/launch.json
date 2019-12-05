@@ -10,9 +10,9 @@
                 "${workspaceFolder}/src-custom-test/CT_MainPl.ts",
             ],
             "runtimeArgs": [
+                "ts-node/register",
                 "--nolazy",
                 "-r",
-                "ts-node/register",
             ],
             "protocol": "inspector",
             "console": "integratedTerminal",

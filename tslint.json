@@ -7,7 +7,8 @@
     "exclude": [
       "node_modules/**",
       "eslintrc.js",
-      "src/test/**"
+      "src/test/**",
+      "src-custom-test/**"
     ]
   },
   "rules": {
@@ -29,6 +30,8 @@
     "arrow-parens": true,
     "variable-name": false,
     "space-before-function-paren": false,
-    "only-arrow-functions": false
+    "only-arrow-functions": false,
+    "max-line-length": false,
+    "no-bitwise": false
   }
 }

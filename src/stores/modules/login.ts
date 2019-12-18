@@ -24,10 +24,10 @@ export default {
     },
     // 异步方法配置
     actions: {
-        handleLogin(state: any, info: { userName: string, passward: string }) {
+        handleLogin(state: any, info: { userName: string, password: string }) {
             GlobalEventEmitter.getInstance().emit(GlobalEvent.SHOW_MSG_MODAL, {
-                title: "loginstore sss" + info.userName + ":" + info.passward,
-                content: "对话框内容:你好ssss"
+                title: "loginstore :" + info.userName,
+                content: "对话框内容:" + info.password
             });
             return Promise.resolve();
         }

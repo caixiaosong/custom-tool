@@ -5,7 +5,7 @@
 import GlobalEventEmitter from "@/global/GlobalEventEmitter";
 import GlobalEvent from "@/global/GlobalEvent";
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { ModalConfig } from "iview";
+import { ModalConfig } from "view-design";
 
 @Component
 export default class Global extends Vue {

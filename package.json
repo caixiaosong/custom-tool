@@ -16,7 +16,7 @@
   "dependencies": {
     "core-js": "2.6.9",
     "ioredis": "4.14.1",
-    "iview": "3.5.1",
+    "view-design": "^4.0.2",
     "vue": "2.6.10",
     "vue-class-component": "7.1.0",
     "vue-property-decorator": "8.2.2",

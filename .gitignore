@@ -4,9 +4,13 @@ src-custom-test-out
 /dist
 
 
+.package-lock.json
+.package-lock.json.bak
+
 # local env files
 .env.local
 .env.*.local
+
 
 # Log files
 npm-debug.log*

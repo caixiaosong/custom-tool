@@ -1,7 +1,7 @@
 export class XBitUtils {
 
     /**
-     * 数字最多位数
+     * 数字最多位数:32
      */
     public static readonly MAX_BIT_FOR_NUM: number = 32;
 
@@ -128,7 +128,7 @@ export class XBitUtils {
      * @param startIndex
      * @param endIndex
      */
-    public static bitToArr(bitState: number, startIndex: number = 0, endIndex: number = 64): number[] {
+    public static bitToArr(bitState: number, startIndex: number = 0, endIndex: number = XBitUtils.MAX_BIT_FOR_NUM): number[] {
         const bitArr: number[] = [];
         for (let i: number = startIndex; i < endIndex; ++i) {
             bitArr.push(XBitUtils.isBitSet(bitState, i) ? 1 : 0);

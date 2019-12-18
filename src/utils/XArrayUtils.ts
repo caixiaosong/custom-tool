@@ -8,7 +8,7 @@ export class XArrayUtils {
      * @param start 开始的数值
      * @param incr 数值增量
      * @example createNumArr(10, 0) =>[0,9)
-     * @example createNumArr(10, 0,0) => 10个0
+     * @example createNumArr(10, 0, 0) => 10个0
      */
     public static createNumArr(num: number, start: number = 0, incr: number = 1): number[] {
         const nums: number[] = [];
@@ -47,4 +47,20 @@ export class XArrayUtils {
         }
         return bitState;
     }
+
+    /**
+     * 将传入的value按位转换成数组
+     * @param value 传入的值
+     * @param length 转换长度，超过32会被截断成32
+     * @param startIndex 开始转换的下标
+     */
+    public static bitToArr(value: number, length: number, startIndex: number = 0): number[] {
+        const nums: number[] = [];
+        const maxLength: number = Math.min(startIndex + length, XBitUtils.MAX_BIT_FOR_NUM);
+        for (let i = startIndex; i < maxLength; ++i) {
+            nums.push(XBitUtils.isBitSet(value, i) ? 1 : 0);
+        }
+        return nums;
+    }
+
 }

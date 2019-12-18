@@ -1,7 +1,5 @@
 <!--函数式组件-->
-<template >
-  
-</template>
+<template ></template>
 
 <script lang ="ts">
 import GlobalEventEmitter from "@/global/GlobalEventEmitter";
@@ -19,7 +17,7 @@ export default class Global extends Vue {
 
   private addListener(): void {
     GlobalEventEmitter.getInstance().addListener(
-      GlobalEvent.Modal,
+      GlobalEvent.SHOW_MSG_MODAL,
       this.onGetGlobalModal
     );
   }

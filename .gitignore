@@ -4,9 +4,6 @@ src-custom-test-out
 /dist
 
 
-.package-lock.json
-.package-lock.json.bak
-
 # local env files
 .env.local
 .env.*.local
@@ -31,3 +28,5 @@ yarn.lock
 
 #Electron-builder output
 /dist_electron
+package-lock.json
+package-lock.json.bak

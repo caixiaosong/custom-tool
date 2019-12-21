@@ -1,11 +1,7 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
-import {
-  createProtocol,
-  installVueDevtools
-} from 'vue-cli-plugin-electron-builder/lib'
-import WinShowTest from './test/WinShowTest'
+import { app, BrowserWindow, protocol } from 'electron'
+import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import { GlobalVar } from './global/GlobalVar'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -47,7 +43,7 @@ function createWindow() {
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
-  new WinShowTest().run();
+
 }
 
 // Quit when all windows are closed.

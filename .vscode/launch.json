@@ -4,26 +4,25 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Custom Test",
+            "name": "自定义TS测试",
             "cwd": "${workspaceFolder}",
             "args": [
                 "${workspaceFolder}/src-custom-test/CT_MainPl.ts",
             ],
             "runtimeArgs": [
-                "ts-node/register",
                 "--nolazy",
                 "-r",
+                "ts-node/register"
             ],
             "protocol": "inspector",
             "console": "integratedTerminal",
             "sourceMaps": true,
             "env": {
                 "TS_NODE_PROJECT": "tsconfig.customtest.json"
-            }
-            // "preLaunchTask": "tsc: build - tsconfig.json",
-            // "outFiles": [
-            //     "${workspaceFolder}/src-custom-test-out/**/*.js"
-            // ]
+            },
+            "outFiles": [
+                "${workspaceFolder}/src-custom-test-out/**/*.js"
+            ]
         },
         {
             "name": "Electron: Main",

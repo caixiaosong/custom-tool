@@ -5,6 +5,7 @@ import store from './stores/store';
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
 
+
 Vue.use(ViewUI); // 使用所有iview组件
 Vue.config.productionTip = false;
 
@@ -17,3 +18,4 @@ new Vue({
   //   this.$router.push('/')
   // }
 }).$mount('#app');
+

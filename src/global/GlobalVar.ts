@@ -14,16 +14,28 @@ export class GlobalVar {
     }
 
 
-    public isDev(): any {
-        return this.getVaule('isDev');
+    /**
+     * 是否是开发环境
+     */
+    public isDev(): boolean {
+        return this.getVaule('isDev') as boolean;
     }
+
+    /**
+     * 是否存在指定的key
+     * @param key 要检测的key
+     */
+    public isContainKey(key: any): boolean {
+        return this.map.has(key);
+    }
+
 
     /**
      * 获取指定key的值
      * @param key 指定的key
      */
     public getVaule(key: AUTH_KEY): any {
-        return GlobalVar.instance.map.get(key);
+        return this.map.get(key);
     }
 
     /**
@@ -33,7 +45,7 @@ export class GlobalVar {
      */
     public setValue(key: AUTH_KEY, value: any): any {
         const oldValue = this.getVaule(key);
-        GlobalVar.instance.map.set(key, value);
+        this.map.set(key, value);
         return oldValue;
     }
 }

@@ -58,3 +58,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 如果是页面的的内容因为是采用webPack的hotUpdate,自动更新的。所以不需要重新开始任务electron-debug。直接在reload就可以看到内容
 
+### 自定义的TypeScript测试（与vue，iview无关的）添加
+1 在src-custom-test中添加
+2 通过debug的:自定义TS测试。开启测试
+
+
